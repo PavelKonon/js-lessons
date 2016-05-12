@@ -1,0 +1,11 @@
+{
+  "name": "jamapi",
+  "version": "1.0.0",
+  "description": "Run in console `npm i` http://www.jamapi.xyz/",
+  "main": "example-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pavel Konan",
+  "license": "ISC"
+}

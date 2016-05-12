@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jsPDF Example</title>
+    <script src="https://rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js">
+    </script>
+    <script type="text/javascript">
+        function getBase64FromImageUrl(url) {
+            return new Promise(function(resolve) {
+                var img = new Image();
+
+                img.setAttribute('crossOrigin', 'anonymous');
+
+                img.onload = function() {
+                    var canvas = document.createElement(
+                        "canvas");
+                    canvas.width = this.width;
+                    canvas.height = this.height;
+
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(this, 0, 0);
+
+                    var dataURL = canvas.toDataURL(
+                        "image/jpeg");
+
+                    resolve(dataURL);
+                };
+
+                img.src = url;
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function downloadProfile(type) {
+            var pdf = new jsPDF(type);
+            pdf.text(80, 15, 'First Name: Pavel');
+            pdf.text(80, 25, 'Second Name: Konan');
+            getBase64FromImageUrl('photo.jpg').then(function(imgData) {
+                pdf.addImage(imgData, 'JPEG', 5, 5, 50, 50);
+                pdf.save('example-1.pdf');
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" name="button" onclick="downloadProfile()">Download Profile</button>
+    <button type="button" name="button" onclick="downloadProfile('landscape')">Download Profile Lanscape</button>
+</body>
+
+</html>

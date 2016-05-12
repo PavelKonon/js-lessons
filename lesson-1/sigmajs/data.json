@@ -1,0 +1,90 @@
+{
+    "nodes": [{
+        "id": "t1",
+        "label": "Tenant 1",
+        "x": 1,
+        "y": 0,
+        "size": 3
+    }, {
+        "id": "t2",
+        "label": "Tenant 2",
+        "x": 2,
+        "y": 1,
+        "size": 2
+    }, {
+        "id": "t3",
+        "label": "Tenant 3",
+        "x": 0,
+        "y": 1,
+        "size": 2
+    }, {
+        "id": "s3-1",
+        "label": "Store 3-1",
+        "x": 0,
+        "y": 2,
+        "size": 1
+    },{
+        "id": "s3-2",
+        "label": "Store 3-2",
+        "x": -1,
+        "y": 2,
+        "size": 1
+    },{
+        "id": "s3-3",
+        "label": "Store 3-3",
+        "x": 1,
+        "y": 2,
+        "size": 1
+    },{
+        "id": "s2-1",
+        "label": "Store 2-1",
+        "x": 3,
+        "y": 2,
+        "size": 1
+    },{
+        "id": "s2-2",
+        "label": "Store 2-2",
+        "x": 2,
+        "y": 2,
+        "size": 1
+    },{
+        "id": "s2-3",
+        "label": "Store 2-3",
+        "x": 4,
+        "y": 2,
+        "size": 1
+    }],
+    "edges": [{
+        "id": "e0",
+        "source": "t1",
+        "target": "t2"
+    }, {
+        "id": "e1",
+        "source": "t1",
+        "target": "t3"
+    },{
+        "id": "e3",
+        "source": "t2",
+        "target": "s2-1"
+    },{
+        "id": "e4",
+        "source": "t2",
+        "target": "s2-2"
+    },{
+        "id": "e5",
+        "source": "t2",
+        "target": "s2-3"
+    },{
+        "id": "e6",
+        "source": "t3",
+        "target": "s3-1"
+    },{
+        "id": "e7",
+        "source": "t3",
+        "target": "s3-2"
+    },{
+        "id": "e8",
+        "source": "t3",
+        "target": "s3-3"
+    }]
+}

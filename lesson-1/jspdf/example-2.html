@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jsPDF Example</title>
+    <style media="screen">
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        button {
+            margin: 10px;
+            display: block;
+        }
+    </style>
+    <script src="https://rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        function downloadProfile() {
+            var margins = {
+                top: 0,
+                bottom: 60,
+                left: 40,
+                width: 522
+            };
+            var pdf = new jsPDF('p', 'pt', 'letter');
+            pdf.fromHTML($('.profile')[0], margins.left, margins.top, {
+                'width': margins.width
+            }, function(dispose) {
+                pdf.save('example-2.pdf');
+            }, margins);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="profile">
+        <h2>Example 2</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr style="height:20px">
+                    <th style="width:5%">#</th>
+                    <th style="width:10%">Store Name</th>
+                    <th style="width:10%">Store Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>british</td>
+                    <td>Irvington,&nbsp; 115 Broadway NY, 10533</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>british</td>
+                    <td>Irvington,&nbsp; 115 Broadway NY, 10533</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" name="button" onclick="downloadProfile()">Download Profile</button>
+
+</body>
+
+</html>
