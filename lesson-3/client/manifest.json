@@ -1,0 +1,8 @@
+{
+  "name": "Geek-Solutions Push Example",
+  "short_name": "push-example",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "gcm_sender_id": "183215704700",
+  "gcm_user_visible_only": true
+}
