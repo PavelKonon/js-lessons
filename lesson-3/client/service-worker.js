@@ -8,6 +8,9 @@ self.addEventListener('push', function(event) {
     if (payload === 'geek-solutions') {
         data.tag = payload;
     }
+    if (payload === 'custom') {
+        data.body = payload;
+    }
     event.waitUntil(
         self.registration.showNotification('Geek-Solutions test', data)
     );
